@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test005.html</title>
+
+<script type="text/javascript">
+
+   function actionPerformed() /*이걸 정의하고 있음.. 클릭되면 이 함수를 호출해라..*/
+   {
+	  // 테스트
+	  // alert("함수 호출 완료~!!!");
+	  
+	  alert(document.getElementById("name").value);
+      var nKor = document.getElementById("kor").value;
+      var nEng = document.getElementById("eng").value;
+      var nMat = document.getElementById("mat").value;
+/*       document 문서 객체에서 Element 요소를 가져올 거다.. kor이라는.. id를 쓰는.. 
+ * 	.value = 저 안에 입력된 값을 가져오겠다.
+ var? 자바스크립트는 변수에 자료형을 선언하지 않음..
+variable의 약자인 var로만 선언.. 없어도 됨.. 의미가 다를 뿐..
+왜 parseInt? 자바라변 변수 선언할 때 int 자료형임을 선언함으로 정수라는 걸 알 수 있다.
+		그러나 자바스크립트에서는 변수 선언할 때 자료형을 명시하지 않았기 때문에 nKor에 뭐가 있는 줄 몰라서..
+		parseInt 하지 않으면 그냥 문자 합체를 한다.
+		
+		자바스크립트는 페이지가 동작하게 한다~!
+ */
+
+      
+      var nTot = 0;
+      var nAvg = 0;
+      
+      nTot = parseInt(nKor) + parseInt(nEng) + parseInt(nMat);
+      nAvg = Math.round(nTot/3);
+      
+      document.getElementById("tot").value = nTot;
+      document.getElementById("avg").value = nAvg;
+   }
+/* 	이 영역은 html의 영역이 아니라 자바 스크립트..
+	굳이 따지자면 C에 좀더 가까운 언어*/
+	
+	
+</script>
+
+</head>
+<body>
+
+<div>
+   <h1>데이터 입력 관련 태그</h1>
+   <hr>
+</div>
+
+<div>
+   <form>
+      이름 <input type="text" id="name"><br>
+      국어 <input type="text" id="kor"><br>
+      영어 <input type="text" id="eng"><br>
+      수학 <input type="text" id="mat"><br>
+      <br>
+      
+      <input type="button" value="결과" onclick="actionPerformed()">
+      <input type="reset" value="취소">
+      <br>
+      
+      총점 <input type="text" id="tot"> 평균 <input type="text" id="avg"><br>
+      
+   </form>
+</div>
+
+</body>
+</html>
+
+<!-- 		우리는 클라이언트 쪽 컨트롤 중..
+		서버 쪽으로 하고 있는건 뭐 없음..  
+		웹컨텐츠 공간은 퍼블릭, 웹 inf 공간은 프라이빗.. 
+		클라이언트가 접근 불가..
+		400번대 에러 : 클라이언트 에러. 페이지 존재 하지 않음!
+		500번대 에러 : 서버 측 에러-->
