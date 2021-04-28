@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test005.html</title>
+
+<style type="text/css">
+	p i {color:red;}
+	/* 대상은 『i』 단, 상위에 『p』가 존재하는 『i』만...*/
+	
+	p>i {color: blue; font-size: 15pt;}
+	/* 부모 자식 선택자. 대상은 『i』 단, 부모가 『p』인 『i』만...*/
+	
+	span {font-size: 20pt;}
+	
+	p+span{color: orange;}
+	/*대상은 『span』 단, 『p』와 인접한 『span』 만...*/
+</style>
+</head>
+<body>
+
+<div>
+	<h1>문장 구조 선택자 활용 및 관찰</h1>
+	<hr>
+</div>
+
+<!-- 문장 구조 선택자 -->
+<!-- 자식 선택자, 자손 선택자, 인접 선택자 등 -->
+
+<p>이 문장을 통해 <i>이중 태그</i>로 선택자를 사용하는 방법을 확인한다.</p>
+
+<p>이 문장을 <span>통해 <i>이중 태그</i>로 선택자를 사용</span>하는 방법을 확인한다.</p>
+			<!-- 얘는 부모가 span, 조부모가 p -->
+			<!-- 얘는 인접이 아니라 하위에 있는 것 -->
+			
+<p>이 문장을 <i>통해 <span>이중 태그</span>로 선택자를 사용</i>하는 방법을 확인한다.</p>
+
+<span>이 문장을 통해 이중 태그로 선택자를 사용하는 방법을 확인한다.</span><br><br>
+			<!-- 얘는 p와 span이 동등한 레벨 -->
+<i>상위 엘리먼트에 p가 존재하지 않는 i</i><br><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

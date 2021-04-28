@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test003.html</title>
+
+<style type="text/css">
+	p {color:green; font-size:12pt; font-weight:bold;}
+	p.type1{color: yellow;}
+	p.type2{color: blue;}
+	.type3{color: purple; font-size:17pt} /* p든 span이든 type3 클래스 이기만 하면 */
+	/* p엘리먼트 영향+type3영향.. 그래서 span과 다른 형태로 표현 */
+</style>
+</head>
+<body>
+<div>
+	<h1>class를 선택자로 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<p> 그냥 p 태그만 페이지에 적용될 경우 이렇게 확인된다.</p>
+	<p class="type1"> 하지만, 클래스를 사용할 경우 이렇게 확인된다.</p>
+	<p class="type2"> 또한, 다른 클래스를 사용할 경우 이렇게 확인된다.</p>
+	<p class="type1"> 여기서는 이렇게</p>
+    <p class="type2">저기서는 저렇게</p>
+    <p class="type3">거기서는 그렇게</p>
+	<span class="type3">span 태그 영역에서는 이렇게</span>
+</div>
+</body>
+</html>
