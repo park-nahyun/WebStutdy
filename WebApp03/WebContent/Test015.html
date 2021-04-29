@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test015</title>
+
+<style type = "text/css">
+	input.box:focus 
+   {
+      background-color: yellow;
+   }
+   
+   input.box_su
+   {
+   		width : 50px;
+   }
+</style>
+
+<script type = "text/javascript">
+
+	function btnA_onclick()
+	{
+		// alert("A 버튼 클릭 테스트");
+		
+		// alert(document.getElementById("txtLeft")); // 객체를 가져오는것
+		
+		// A에 사과를 입력하면 경고창으로 사과(밸류)가 뜸
+		// alert(document.getElementById("txtLeft").value); // 객체의 속성을 가져오는 것
+		
+		// A에 사과를 입력하면 B에도 사과가 뜬다
+		// var txt01 = document.getElementById("txtLeft").value;
+		// document.getElementById("txtRight").value = txt01;
+		
+		// var txt01 = document.getElementById("txtLeft"); 
+		//var txt02 = document.getElementById("txtRight");
+		//var leftStr = txt01.value;
+		
+		//txt02.value = leftStr;
+	}
+	
+	function btnB_onclick()
+	{
+		// alert("B 버튼 클릭 테스트");
+		// alert(document.getElementById("txtRight");
+		
+		var txt01 = document.getElementById("txtRight");
+		var txt02 = document.getElementById("txtLeft");
+		var rightStr = txt01.value;
+		txt02.value = rightStr;
+	}
+	
+	function btnResult_onclick()
+	{
+		
+		// 테스트
+		//alert("함수 호출 확인");
+	 /* var txt01 = document.getElementById("txt_su1");
+		var txt02 = document.getElementById("txt_su2");
+		var result = txt01.value + txt02.value;
+		txt_result.value = result; */
+		//--> 1+2 = 12 이런 식으로 나옴
+		
+		var num1 = document.getElementById("txt_su1").value;
+		// 테스트
+		// alert(num1)
+		var num2 = document.getElementById("txt_su2").value;
+		// var result = num1 + num2; 이렇게 하면 안돼
+		
+		 var result = parseInt(num1) + parseInt(num2);
+		// var result = Number(num1) + Number(num2); 
+		// 혹은 넘버 객체로 구성
+		
+	     document.getElement("txt_result").value = result;	
+		
+	     // document.getElement("txt_result").value = parseInt(document.getElementById("txt_su1").value)
+	    //  + parseInt(document.getElementById("txt_su2").value); 해도됨..
+	}
+	
+</script>
+</head>
+<body>
+
+<div>
+	<hr>
+	<input type = "text" class = "box" id = "txtLeft">
+	<input type = "button" value = "A버튼" class = "btn" id = "btnA" onclick = "btnA_onclick()">
+	<input type = "button" value = "B버튼" class = "btn" id = "btnB" onclick = "btnB_onclick()">
+	<input type = "text" class = "box" id = "txtRight">
+	
+	<hr>
+	<input type="text" class="box_su" id="txt_su1">
+	+
+	<input type="text" class="box_su" id="txt_su2">
+	<input type="button" class="btn" value="=" id="btnResult" onclick = "btnResult_onclick()">
+	<input type="text" class="box_su" id="txt_result">
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

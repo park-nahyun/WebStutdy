@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test014.html</title>
+
+<script type ="text/javascript">
+<!--
+	// var 키워드 사용 → msg 변수 → 함수 밖에 선언 → 전역변수
+	var msg = "2021년 4월의 어느 날";
+	
+ 	function button_onclick1()
+ 	{
+ 		// alert("첫 번째 버튼 클릭");
+ 		
+ 		// var 키워드 사용 → name 변수 → 함수 내부에 선언 → 지역변수
+ 		// var name = "선혜연";
+ 		
+ 		// var 키워드 생략 → name 변수 → 함수 내부에 선언 → 상황에 따른 지역/전역 변수
+ 		name = "김서현";
+ 		
+ 		document.write("이름 : " + name);
+ 		alert(msg);
+ 	}
+ 	
+ 	function button_onclick2()
+ 	{
+ 		// alert("두 번째 버튼 클릭");
+ 		
+ 		document.write("이름 : " + name);
+ 		alert(msg);
+ 	}
+ 	
+ 	// var 선언하지 않은 "김서현" 경우 : 처음 두 번째 눌렀을 때는 이름이 안나옴. 
+ 	// 그 다음 첫 번째 눌렀다가 다시 두 번째 누르면 이름 생김!!!
+ 	// 왜냐면 첫 번째 누른 순간 이름에 메모리가 할당 되었기 때문..
+ 	// 자바스크립트 지원한다면 정상 작동, 지원 안한다면 주석처리되어 작동 안함.--> 
+</script>
+
+<noscript>
+ 자바스크립트가 사용되지 못할 경우 표현되는 영역
+</noscript>
+
+</head>
+<body>
+
+<input type="button" id="button1" value="Button" onclick="button_onclick1()"><br>
+<input type="button" id="button2" value="Button" onclick="button_onclick2()">
+
+<br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test012.html</title>
+
+<script type = "text/javascript">
+	
+	message = "<h1>Hello~!!!</h1>";
+	document.write(message);
+	alert(message);		/* 경고창 기능 */
+	
+	// 임베디드 방식으로 넣은 것
+</script>
+
+<script type = "text/javascript" src = "JS/alertTest.js">
+/* 얘만 외부 참조 적용*/
+/* 이 사이에 9~13 구문 쓰면 안됨
+외부 스크립트 가져오기 위해 쓰여진 구문임..*/
+</script>
+
+<script type = "text/javascript">
+	// Date 내장 객체 : 현재 시스템의 날짜와 시간
+	// var dt = Date.toString();
+	var dt = String(Date());
+	// 함순데.. 대문자로 시작.. 얘는 객체.. 그냥 생성자로 받아들이자..
+	document.write(dt);
+	// 임베디드 방식으로 넣은 것
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>
