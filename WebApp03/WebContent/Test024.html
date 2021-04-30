@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test024.html</title>
+
+<style type="text/css">
+
+   * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeeff;}
+   input.btn {width: 150px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange;}
+   input.txt {width: 100px; text-align: right;} 
+   input.txtScore {text-align: right;}   
+   td {text-align: center;}
+   textarea {font-family: 나눔고딕코딩; font-weight:bold;}
+
+</style>
+
+<script type="text/javascript">
+	
+	function actionScore()
+	{
+		
+		// alert("됨");
+		var str="";
+		var arr = new Array(new Array(), new Array(), new Array(), new Array(), new Array(), new Array());
+		
+		//					이름들		국어점수들	영어점수들	수학점수들	총점들	석차들
+		//	평균, 석차 등을 추가할 수 없지만 이름, 국어점수, 영어점수 등은 들어갈 수 있다.
+		
+		var n = 0;
+		
+		do
+		{
+			str = prompt("이름 국어 영어 수학(" + (n+1) + ") : ");
+			
+			if (str == null || str == " " || str == "." || str=="")
+				break;
+			
+			// null을 조건문에서 넣으면 반복문만 탈출, 취소로 null값 반환하면.. 프로그램 종료되나봐..?
+			
+			var member = str.split(" ");	// 문자열 요소 배열 구성
+
+			arr[0][n] = member[0];
+			arr[1][n] = member[1];
+			arr[2][n] = member[2];
+			arr[3][n] = member[3];
+			arr[4][n] = (Number(member[1]) + Number(member[2]) + Number(member[3])).toString();
+			arr[5][n] = 1;
+			
+			n++;
+			
+			
+		} while (true);
+
+		// 석차 산출
+		for (var i=0; i<arr[0].length; i++)
+		{
+			for (var j=0; j<arr[0].length; j++)
+			{
+				if (i==j)
+					continue;
+				else if (Number(arr[4][i]) > Number(arr[4][j]))
+					arr[5][i] = (Number(arr[5][i])+1).toString();
+
+			}
+		}	
+
+		var result = "";
+		// 여기 null 하면 반복문 안 멈춤.. null도 있고 undefined도 있고.. 뭐도 있고..해서..
+		for (var j=0; j<arr[0].length; j++)
+		{
+			for (var k=0; k<arr.length; k++)
+			{
+				// alert(k + "," + j);
+				result += arr[k][j] + " ";
+			}
+			result += "\n";
+		}
+		
+		document.getElementById("txtCount").value = arr[0].length;
+		
+		document.getElementById("memberList").value = " 이름 국어 영어 수학 총점 석차\n";
+		document.getElementById("memberList").value += result;
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- 
+	prompt()를 활용하여 여러 명의 성적을 입력받고
+	등수를 부여하여 리스트를 출력하는 페이지를 구성한다.
+	
+	HTML, CSS, Javascript 활용한다.
+	
+	페이지 레이아웃
+	--------------------------------------------------------
+	< 성적 정보 입력 > ---------------------------------------- 이름 국어 영어 수학(1) :
+	
+	전체 인원 수 :  [  3]명
+	----------------------------------------
+	이름    국어 영어 수학  총점 등수
+	선혜연   90   80   70    xxx  1등
+	심혜진   80   70   60    xxx  2등
+	김가연   70   60   50    xxx  3등
+	------------------------------------------
+	--------------------------------------------------------
+ -->
+ 
+ <div>
+ 	<h1>자바스크립트 활용</h1>
+ 	<hr>
+ </div>
+ 
+ <div>
+	 <form>
+		<input type="button" value="성적 정보 입력" class="btn" style="width: 200px;" onclick="actionScore()">
+		<br><br>
+		전체 인원 수 : 
+		<input type="text" class="txt" id="txtCount" 
+		style="width: 20px;"readonly="readonly">명<br><br>
+				
+		<textarea rows="10" cols="50" id="memberList" readonly="readonly"></textarea>
+	 </form>
+ </div>
+
+	
+</body>
+</html>

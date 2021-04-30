@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test018</title>
+<style type="text/css">
+
+   * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeeff;}
+   input.btn {width: 150px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange;}
+   input.txt {width: 100px; text-align: right;} 
+   input.txtNum {width: 100px; text-align: right;}   
+   td {text-align: center;}
+
+</style>
+
+<script type="text/javascript">
+
+	function resultOn()
+	{
+		alert("됨");
+		var kor = parseInt(document.getElementById("kor").value);
+		var eng = parseInt(document.getElementById("eng").value);
+		var mat = parseInt(document.getElementById("mat").value);
+		
+		var avg = (kor + eng + mat) / 3.0
+		
+		document.getElementById("avg").value = avg;
+		var result;
+		
+		if (avg>=60 && kor>=40 && eng >= 40 && mat >= 40)
+			result ="합격";
+		else if(avg<60)
+			result = "불합격";
+		else if(avg>=60 && (kor<40 || eng < 40 || mat < 40))
+			result = "과락";
+		document.getElementById("result").value = result;
+
+	}
+</script>
+
+</head>
+<body>
+
+
+<!-- 
+	사용자로부터 이름, 국어점수, 영어점수, 수학점수를 입력받아
+	평균점수와 판정결과를 출력하는 페이지를 구성한다.
+	판정결과는 합격, 과락, 불합격 중 하나로 처리한다.
+	
+	합격은 모든 과목 점수가 40점 이상이면서 평균 점수가 60점 이상인 경우
+	과락은 평균이 60점 이상이지만 한 과목이라도 과목 점수가
+	40점 미만의 과목이 존재하는 경우
+	불합격은 평균이 60점 미만인 경우로 처리한다.
+	
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃
+	-------------------------------------------------------------------------
+	이름		[             ]
+	국어점수 	[             ]
+	영어점수	[             ]
+	수학점수	[             ]
+	
+	< 처리 결과 확인 >
+	평균         판정결과
+	[       ]   [        ]
+	-------------------------------------------------------------------------
+ -->
+ <div>
+	<form>
+	이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type = "text" class = "txt" id = "name">
+	<br>
+	국어점수  <input type = "text" class = "txtNum" id = "kor"> 
+	<br>
+	영어점수  <input type = "text" class = "txtNum" id = "eng"> 
+	<br>
+	수학점수  <input type = "text" class = "txtNum" id = "mat"> 
+	<br><br>
+	
+	<input type = "button" class = "btn" value = "처리 결과 확인" onclick = "resultOn()"> 
+	<input type = "reset" class = "btn" value ="취소">
+	<br><br>
+	평균&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;판정결과
+	<br>
+	<input type = "text" class = "txtNum" id = "avg" disabled="disabled">
+	&nbsp;&nbsp;&nbsp;
+	<input type = "text" class = "txt" id = "result" disabled="disabled"> 
+
+
+	</form>
+</div>
+
+</body>
+
+
+</html>

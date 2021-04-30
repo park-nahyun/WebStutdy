@@ -1,0 +1,81 @@
+v<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test020.html</title>
+<style type="text/css">
+
+   * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeeff;}
+   input.btn {width: 150px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange;}
+   input.txt {width: 200px; text-align: left;}   
+
+</style>
+<script type = "text/javascript">
+
+	var arr = new Array(4, 7, 9, 1, 3, 2, 5, 6, 8);
+	
+	function load()
+	{
+		for(var i=0;i<arr.length;i++)
+		{
+			if (i!=arr.length-1)
+				document.getElementById("arr").value += arr[i] + ", "
+			else
+				document.getElementById("arr").value += arr[i] 
+		}
+	}
+	
+	
+	function resultOn()
+	{
+		// alert("됨");
+		
+		for(var i=0;i<arr.length;i++)
+		{
+			if (arr[i]%2==0 && i!=arr.length-1)
+				document.getElementById("even").value += arr[i] + ", ";
+			else if (arr[i]%2==0 && i==arr.length-1)
+				document.getElementById("even").value += arr[i];
+		}
+	}
+</script>
+</head>
+<body onload = "load()">
+
+<!-- 
+	지정된 정수가 들어있는 1차원 배열의 숫자 데이터들 중에서
+	짝수만 골라서 출력하는 페이지를 구성한다.
+	
+	HTML, CSS, Javascript 활용한다.
+	
+	또한, 자바스크립트 배열을 활용한다.
+	
+	※ 지정된 정수 배열 → 4, 7, 9, 1, 3, 2, 5, 6, 8
+	
+	페이지 레이아웃
+	--------------------------------------------------------------
+	초기 배열 상태 [4, 7, 9, 1, 3, 2, 5, 6, 8] ← 지정된 배열 출력
+	
+	< 결 과 >
+	
+	짝수만 출력  [ 4, 2, 6, 8 ]
+	--------------------------------------------------------------
+ -->
+ 
+<div>
+초기 배열 상태&nbsp;&nbsp;
+<input type="text" class = "txt" id = "arr">
+<br><br>
+
+</div>
+<input type="button" class="btn" id = "result" value ="결 과" onclick="resultOn()">
+<br><br>
+짝수만 출력&nbsp;&nbsp;
+<input type="text" id = "even" disabled="disabled">
+ 
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test017.html</title>
+
+<style type ="text/css">
+	input {font-family: 나눔고딕코딩; font-weight: bold;}
+	input:focus {background-color: #eeeedd;}
+	input.txtNum {width: 80px;}
+	input.btn {width: 80px; font-weight: bold; font-family: 맑은 고딕;}
+	input.btn:hover {color:orange;}
+	input.btn:active{color:red;}
+	body {background-color:#D2D2FF;}
+</style>
+
+<script type = "text/javascript">
+
+	function result_on()
+	{
+		var num1 = parseInt(document.getElementById("price").value);
+		document.getElementById("total").value = num1;
+		
+		var n500 = parseInt(num1/500);
+		var num2 = num1 - (n500*500);
+		var n100 = parseInt(num2/100);
+		var num3 = num2 - n100*100;
+		var n50 = parseInt(num3/50);
+		var num4 = num3 - (n50*50);
+		var n10 = parseInt(num4/10);
+		
+		
+		document.getElementById("num500").value = n500;
+		document.getElementById("num100").value = n100;
+		document.getElementById("num50").value = n50;
+		document.getElementById("num10").value = n10;
+	}
+
+</script>
+
+</head>
+<body>
+
+
+<!-- 
+	특정 금액(10원 ~ 990원)을 사용자로부터 입력받아
+	화폐 단위로 구분하여 출력하는 페이지를 구성한다.
+	화폐 단위는 편의생 오백원, 백원, 오십원, 십원으로 구분한다.
+	HTML, CSS, Javascript 를 활용한다.
+	
+	페이지 기본 레이아웃 구성
+	--------------------------------------------------------------------------
+	금액 [               ] 원
+	
+	<결과> <취소>
+	
+	총액 [               ] 원
+	오백원      [        ] 개
+	백원        [        ] 개
+	오십원      [        ] 개
+	십원        [        ] 개
+	
+	html - css - 자바스크립트 순서
+	--------------------------------------------------------------------------	
+ -->
+
+
+<div>
+	<form>
+	금&nbsp;&nbsp; 액  <input type = "text" class = "txtNum" id = "price"> 원
+	<br><br>
+	
+	<input type = "button" class = "btn" value = "결과" id = "result" onclick = "result_on()"> 
+	<input type = "reset" class = "btn" value ="취소">
+	<br><br>
+	
+	총&nbsp;&nbsp; 액  <input type = "text" class = "txtNum" id = "total"> 원
+	<br>
+	오백원 <input type = "text" class = "txtNum" id = "num500"> 개
+	<br>
+	백&nbsp;&nbsp; 원  <input type = "text" class = "txtNum" id ="num100"> 개	
+	<br>
+	오십원 <input type = "text" class = "txtNum" id ="num50"> 개
+	<br>
+	십&nbsp;&nbsp; 원  <input type = "text" class = "txtNum" id ="num10"> 개
+	<br><br>
+	
+
+	</form>
+</div>
+
+</body>
+
+</html>

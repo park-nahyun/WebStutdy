@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test024.html</title>
+
+<style type="text/css">
+
+   * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeeff;}
+   input.btn {width: 150px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange;}
+   input.txt {width: 100px; text-align: right;} 
+   input.txtScore {text-align: right;}   
+   td {text-align: center;}
+   textarea {font-family: 나눔고딕코딩; font-weight:bold;}
+
+</style>
+
+<script type="text/javascript">
+	
+	function info()
+	{
+		var str="";
+		var num;
+		var arr = new Array();
+		var arr2 = new Array();
+		var n = 1;
+				
+		// alert("됨");
+		do
+		{
+			str = prompt("이름 국어 영어 수학(" + n + ") : ");
+			
+			if (str==null || str=="." || str==" " || str =="")
+				break;
+			
+			arr = str.split(" ");
+			//alert(arr);
+			
+			arr[1] = parseInt(arr[1]);
+			arr[2] = parseInt(arr[2]);
+			arr[3] = parseInt(arr[3]);
+			arr[4] = parseInt(arr[1]+arr[2]+arr[3]);
+			
+			arr2.push(arr);
+			arr2[n-1][5] = 1;
+			// alert(arr2[n-1][5]);
+	
+
+			n++;
+		}
+		while (true);
+		
+	
+
+		//alert(arr2.length);
+		document.getElementById("num").value = arr2.length;
+		
+		
+		for(var i=0; i<arr2.length;i++)
+		{
+			for(var j=0; j<arr2.length;j++)
+			{
+				// alert(arr2);
+				
+				if (i==j)
+					continue;
+				else if (Number(arr2[i][4]) < Number(arr2[j][4]))
+					arr2[i][5] += 1;
+				
+				
+			}
+		}
+		
+		
+		for (var i=0 ; i<arr2.length ; i++)
+			document.getElementById("txtResult").value += arr2[i] + "\n";
+		
+
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- 
+	prompt()를 활용하여 여러 명의 성적을 입력받고
+	등수를 부여하여 리스트를 출력하는 페이지를 구성한다.
+	
+	HTML, CSS, Javascript 활용한다.
+	
+	페이지 레이아웃
+	--------------------------------------------------------
+	< 성적 정보 입력 > ---------------------------------------- 이름 국어 영어 수학(1) :
+	
+	전체 인원 수 :  [  3]명
+	----------------------------------------
+	이름    국어 영어 수학  총점 등수
+	선혜연   90   80   70    xxx  1등
+	심혜진   80   70   60    xxx  2등
+	김가연   70   60   50    xxx  3등
+	------------------------------------------
+	--------------------------------------------------------
+ -->
+ 
+ <div>
+	 <form>
+	 <input type="button" class="btn" value="성적 정보 입력" id="input" onclick="info()">
+			<br><br>
+			전체 회원 수 : 
+			<input type="text" class="txt" id="num" readonly="readonly">명<br><br>
+			
+			<textarea rows="10" cols="30" id="txtResult" readonly="readonly"></textarea>
+	 </form>
+ </div>
+
+	
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test023.html</title>
+<style type="text/css">
+
+   * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeeff;}
+   input.btn {width: 150px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange;}
+   input.txt {width: 100px; text-align: right;} 
+   input.txtScore {text-align: right;}   
+   td {text-align: center;}
+   textarea {font-family: 나눔고딕코딩; font-weight:bold;}
+
+</style>
+
+<script type="text/javascript">
+	function info()
+	{
+		var str
+		var arr = new Array();
+		var i = 1; // 회원 수
+		
+		do
+		{
+			str = prompt("이름 전화번호 입력(" + i + ") : ");
+			if (str==null || str==" " || str=="." || str=="")
+				break;
+			arr[i-1] = str;
+			i++;
+			// alert(arr);
+			// 여기서 넣으면 . 혹은 " " 넣어도 삽입되므로 안됨.
+		}
+		while(true) // 여기에 조건을 넣으면 str(공백, ","이 arr에 삽입된 후 조건문을 나가서 안됨)
+		
+		document.getElementById("num").value = arr.length;
+		for (var i=0 ; i<arr.length; i++)
+			document.getElementById("contents").value += arr[i] + "\n";
+			
+	}
+</script>
+</head>
+<body>
+
+<!-- 
+	여러 명의 이름과 전화번호를 입력받고
+	그 내용을 전체 출력하는 페이지를 구성한다.
+	
+	HTML, CSS, Javascript 활용한다.
+	
+	prompt() 활용한다.
+	
+	페이지 레이아웃
+	------------------------------------------------------------------
+	< 회원 정보 입력 >------------------------------------------------ 버튼 클릭 → 이름 전화번호 입력(1) : 한혜림 010-1111-1111
+																			        이름 전화번호 입력(2) : 장서현 010-2222-2222
+																			        이름 전화번호 입력(3) : 입력 없음 / . / 공백
+	
+	전체 회원 수 : [      ]명
+	-------------------------
+		이름	전화번호
+	-------------------------
+			  :
+	------------------------------------------------------------------ 
+ -->
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<input type="button" class="btn" value="회원 정보 입력" id="input" onclick="info()">
+		<br><br>
+		전체 회원 수 : 
+		<input type="text" class="txt" id="num" readonly="readonly">명<br>
+		------------------------------<br>
+		&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;전화번호<br>
+		------------------------------<br>
+		<textarea id="contents"></textarea>
+		
+	
+	</form>
+</div>
+<br>
+
+</body>
+</html>

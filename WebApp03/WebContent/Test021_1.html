@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test021.html</title>
+<style type="text/css">
+
+   * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeeff;}
+   input.btn {width: 150px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange;}
+   input.txt {width: 100px; text-align: right;} 
+   input.txtScore {text-align: right;}   
+   td {text-align: center;}
+   textarea {font-family: 나눔고딕코딩; font-weight:bold;}
+
+</style>
+
+<script type = "text/javascript">
+	function result_on()
+	{
+		// alert("됨");
+		
+		var num1;
+		var arr = new Array();
+		var str = document.getElementById("data").value;
+		var arr = str.split(" ");
+		document.getElementById("selectAll").value = str;
+		
+		
+		for (var i=0 ; i<arr.length; i++)
+		{
+			 arr[i] = parseInt(arr[i]);
+		}
+		
+		// alert(typeof(arr[0]));
+		
+		
+		for (var i=0 ; i<arr.length ; i++)
+		{
+			for (var j=0 ; j<arr.length; j++)
+			{
+				if (arr[i]>arr[j])
+				{
+					arr[i] = arr[i]^arr[j];
+					arr[j] = arr[j]^arr[i];
+					arr[i] = arr[i]^arr[j];
+				}
+				num1 = arr[0];
+			}
+		}
+		
+		
+	/*
+	      for (var n=0; n<=arr.length; n++)
+	      {
+	         if (nMax < arr[n])
+	         {
+	            nMax = parseInt(arr[n]);
+	         }
+	      }
+	*/
+		
+		document.getElementById("num1").value = num1;
+		
+	}
+</script>
+</head>
+<body>
+
+<!-- 
+	사용자로부터 임의의 정수를 임의의 개수만큼 입력받고,
+	그 내용으로 자바스크립스 배열을 구성하여
+	그 정수들 중 가장 큰 수를 출력해 줄 수 있는 페이지를 구성한다.
+	
+	HTML, CSS, Javascript 활용한다.
+	
+	페이지 레이아웃
+	-------------------------------------------------------------------
+	데이터 입력(공백 구분)[                         ]
+	
+	<결과 확인>
+	
+	- 전체 출력[                    ]
+	- 가장 큰 수     [              ]
+	
+	-------------------------------------------------------------------
+ -->
+<div>
+데이터 입력(공백 구분)
+<input type = "text" id="data" class = "txtArray">
+<br><br>
+<input type ="button" class = "btn" value ="결과 확인" onclick="result_on()">
+<br><br>
+전체 출력
+<input type = "text" id="selectAll" class = "txtArray" disabled="disabled">
+<br>
+가장 큰 수
+<input type ="text" id="num1" class="txt" disabled="disabled">
+</div>
+<br><br><br><br><br>
+</body>
+</html>
