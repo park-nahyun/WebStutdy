@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test034.html</title>
+
+<style type="text/css">
+	a {font-size: small;}
+</style>
+
+<script type="text/javascript">
+	
+	function myAddr(addr)
+	{
+		// alert("함수 호출 확인~!!!");
+		
+		window.opener.document.getElementById("addr1").value = addr;
+		// Test034를 여는 오프너
+		// 즉, Test033의 윈도우.의 도큐먼트
+		
+		// IE용
+		// window.opener.document.getElementById("txt1").innerText = addr;
+		// <span>이 영역은 value가 아니니까</span>
+		
+		// CR, FF용
+		window.opener.document.getElementById("txt1").innerHTML = addr;
+		
+		window.close();
+	}
+	
+</script>
+</head>
+<body>
+
+<div>
+	<form>
+		주소 검색
+		<input>
+		<input type="button" value="검색"><br><br>
+		
+		<!-- <a href="http://www.naver.com">서울 마포구 서교로 1가 (1~110번지)</a><br> -->
+		<a href="javascript:myAddr('서울 마포구 서교로 1가')">서울 마포구 서교로 1가 (1~110번지)</a><br>
+		<a href="javascript:myAddr('서울 마포구 서교로 2가')">서울 마포구 서교로 2가 (111~123번지)</a><br>
+		<a href="javascript:myAddr('서울 마포구 서교로 3가')">서울 마포구 서교로 3가 (124~136번지)</a><br>
+		<a href="javascript:myAddr('서울 마포구 서교로 4가')">서울 마포구 서교로 4가 (137~152번지)</a><br>
+		<a href="javascript:myAddr('서울 마포구 서교로 5가')">서울 마포구 서교로 5가 (153~166번지)</a><br>
+		<a href="javascript:myAddr('서울 마포구 서교로 6가')">서울 마포구 서교로 6가 (167~205번지)</a><br>
+		
+<!-- 		지금처럼 특정 문자열 안에 문자열(형태의 매개변수)을 또 쓰고 싶을 경우 '' 을 쓴다.
+			"" 안에 '' 쓰거나, '' 안에 "" 쓰거나~!
+			그런데 문자열 안에 문자열 안에 문자열을 또 쓰고 싶다면? \"이 안에\"  써야한다.
+			"이렇게 '문자열 안에 또 \"문자열\"을 쓰고싶다면' 이렇게..."
+ -->		
+	</form>
+</div>
+
+</body>
+</html>
