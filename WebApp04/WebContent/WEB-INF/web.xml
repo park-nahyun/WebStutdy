@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>WebApp04</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- GenericServlet 활용 -->
+	<servlet>
+		<servlet-name>Test004</servlet-name> 	<!-- 서버는 컨테이너 안에서 test004를 찾음 -->
+		<servlet-class>com.test.Test004</servlet-class> <!-- 그걸 컴파일 할 수 있도록.. -->
+	
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Test004</servlet-name>	<!-- 얘는 그냥 식별자 -->
+		<url-pattern>/test004</url-pattern>	<!-- 클라이언트가 test004 요청 -->
+	</servlet-mapping>
+	
+	<!-- HttpServlet 활용 -->
+	<servlet>
+		<servlet-name>Test005</servlet-name> 	
+		<servlet-class>com.test.Test005</servlet-class> 
+	
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Test005</servlet-name>	
+		<url-pattern>/login</url-pattern>	
+	</servlet-mapping>
+	
+	
+</web-app>
