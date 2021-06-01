@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQTest03.html</title>
+
+<style>
+	*
+	{
+		margin: 0px;
+		padding: 0px;
+	}
+	div
+	{
+		margin: 5px;
+		padding: 5px;
+		border: 3px solid black;
+		border-radius: 10px;
+	}
+</style>
+
+<!-- 제이쿼리는 이 한 줄이 하나의 구문.. 이 사이에 구문 쓰지마.. -->
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+	// $();
+	// jquery();   // 이것 자체를 제이쿼리 함수라고 부른다.
+	$(document).ready(function()	// 문서가 로드됐을 때 어떤 기능을 적용하는데.. 그게 제대로 되는지 감시 중..
+	{
+		$("div").click(function()
+		{
+			// alert("test");
+			// alert( $(this).html() );
+			// alert( $(this).text() );
+			
+			// alert( $("h1", this).text() );
+			// alert( $("p", this).text() );
+			
+			var h1 = $("h1", this).text();
+			var p = $("p", this).text();
+			
+			alert(h1 + " / " + p);
+		});	
+	});	
+	
+	
+</script>
+</head>
+<body>
+
+<div>
+	<h1>A강의실</h1>
+	<p>JAVA 수업 중</p>
+</div>
+
+<div>
+	<h1>B강의실</h1>
+	<p>.NET 수업 중</p>
+</div>
+
+<div>
+	<h1>C강의실</h1>
+	<p>ORACLE 수업 중</p>
+</div>
+
+<div>
+	<h1>D강의실</h1>
+	<p>ASP 수업 중</p>
+</div>
+
+<div>
+	<h1>E강의실</h1>
+	<p>JSP 수업 중</p>
+</div>
+
+<div>
+	<h1>F강의실</h1>
+	<p>JQUERY 수업 중</p>
+</div>
+
+</body>
+</html>

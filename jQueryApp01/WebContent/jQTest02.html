@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest02.html</title>
+<style type="text/css">
+
+	.item
+	{
+		border: solid 2px red;
+		color: white;
+		background: black;
+	}
+</style>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	/* function test()
+	{
+		alert("함수 호출 확인");
+	} */
+	
+	// 제이쿼리 함수 
+	//jquery(document).ready();
+	//$(document).ready();
+	//jquery();
+	//$();
+	
+	//$(document).ready(기능 삽입 / 동작 수행 / 행위 처리);
+	$(document).ready(function()
+	{
+		//alert("기능 확인");
+		
+		// 우리가 또는 사용자가
+		// 뭔가 건드리지 않아도 (즉, 특별한 이벤트를 발생시키지 않아도 ) 
+		// 자동으로 처리될 수 있는 영역
+		
+		/*
+		$("h1").click(function()
+		{
+			//alert("클릭되었는데요");
+			//alert($(this).html());
+			//$(this).html("어떻게 될까요?");
+			$(this).html($(this).html() + "★");
+		})
+		*/
+		/*
+		// on() : 이벤트 처리
+		$("h1").on("click",function()
+		{
+			//alert("클릭 이벤트 발생");
+			//alert($(this).html());
+		});
+		*/
+		
+		/*
+		$("h1").one("click", function()
+		{
+			//alert("클릭");
+			//alert($(this).html());
+			$(this).html(function(index, html)
+			{
+				//alert(html);
+				// alert(index);
+				
+				return html + "★";
+			});
+		})
+		*/
+		/*
+		$("h1").on(
+		{
+			// mouseenter : 어찌어찌하겠다. → 마우스 진입할 때...
+			// mouseleave : 저찌저찌하겠다. → 마우스 빠져나올 때...
+			mouseenter:function() { $(this).addClass("item") }
+		  , mouseleave:function() { $(this).removeClass("item") }
+		  
+		   // 마우스 들어갈 때 'item'이라는 클래스 지정.. 
+		   // 마우스 빠져나올 때 'item'이라는 클래스 제거... 
+		});
+		*/
+		
+		// mouseenter, mouseleave
+		$("h1").hover(function()
+		{
+			$(this).addClass("item");
+		}, function()
+		{
+			$(this).removeClass("item");
+		});
+		
+		
+		
+		
+	});
+	
+</script>
+</head>
+<body>
+
+<!--  <h1 onclick="test()">박정준</h1>-->
+<h1>박정준</h1>
+<h1>심혜진</h1>
+<h1>선혜연</h1>
+
+</body>
+</html>

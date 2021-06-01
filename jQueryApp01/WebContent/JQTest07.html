@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest07.html</title>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		/*
+		$("#allCheck").change(function()
+		{
+			// 테스트
+			// alert("change");
+		});
+		*/
+		
+		$("#allCheck").click(function()
+		{
+			// 테스트
+			// alert("click");
+			
+			// 테스트
+			// alert( $(this).attr("checked") ); 	//-- undefined
+			// 다른 컨트롤에서는 attr로 체크 되었다/아니다 확인이 가능하지만
+			// checkbox에서는 불가능함
+			
+			// alert( $(this).prop("checked") );	//-- 속성 → true / false
+			// alert( this.checked );				//-- 속성 → true / false
+			// alert ( $(this).is(":checked") );	//-- 속성 → true / false
+			
+			// 방법 1.
+			$("div > input:checkbox").prop("checked", this.checked)
+			// this.checked가 true 이면 div 하위의 input 엘리먼트 중 checkbox 인 애들의
+			// property 속성을 true로 만들어라..
+			
+			// 방법 2.
+			// 『$(선택자).children()』
+			$("div").children().prop("checked", this.checked);
+			
+		});
+	});
+
+</script>
+
+</head>
+<body>
+
+<label><input type="checkbox" id="allCheck">모두 선택</label>
+<br><br>
+
+<div>
+	<input type="checkbox" id="check1">
+	<label for="check1">바나나</label><br>
+	<input type="checkbox" id="check2">
+	<label for="check2">딸기</label><br>
+	<input type="checkbox" id="check3">
+	<label for="check3">수박</label><br>
+	<input type="checkbox" id="check4">
+	<label for="check4">포도</label><br>
+	<input type="checkbox" id="check5">
+	<label for="check5">키위</label><br>
+</div>
+</body>
+</html>
