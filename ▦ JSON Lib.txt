@@ -1,0 +1,57 @@
+   ※ 핵심 기본 라이브러리
+   1. http://www.json.org 요청 및 접근
+   2. 페이지 하단의 Java 카테고리의 『Json-lib』 클릭
+      → http://json-lib.sourceforge.net/
+   3. 페이지 왼편의 Download 클릭
+      → 『json-lib-2.4-jdk15.jar』 파일 다운로드
+   
+   ※ 의존관계 필수 라이브러리(commons-beanutils-1.9.4.jar)
+   1. http://json-lib.sourceforge.net/ 요청 및 접근
+   2. 페이지 하단의 『Dependencies report』 클릭
+      → http://json-lib.sourceforge.net/dependencies.html 
+   3. 페이지 중간의 Dependency Tree 항목으로 이동
+      commons-beanutils:commons-beanutils:jar 클릭
+      → 페이지 내의 특정 위치로 이동
+   4. 『http://commons.apache.org/beanutils/』 클릭
+      → http://commons.apache.org/proper/commons-beanutils/
+   5. 페이지 왼편의 Download 클릭
+      → http://commons.apache.org/proper/commons-beanutils/download_beanutils.cgi
+   6. 페이지 중간의 『commons-beanutils-1.9.4-bin.zip』 클릭
+      → 해당 파일 다운로드
+      
+   ※ 의존관계 필수 라이브러리(commons-logging-1.2.jar)
+   1. http://json-lib.sourceforge.net/ 요청 및 접근
+   2. 페이지 하단의 『Dependencies report』 클릭
+      → http://json-lib.sourceforge.net/dependencies.html
+   3. 페이지 중간의 Dependency Tree 항목으로 이동 
+      http://commons.apache.org/logging 클릭
+   4. 페이지 중간의 『commons-logging-1.2-bin.zip』 클릭
+      → 해당 파일 다운로드
+   
+   ※ 의존관계 필수 라이브러리(commons-collections4-4.4.jar)
+   1. http://json-lib.sourceforge.net/dependencies.html 요청 및 접근
+   2. 페이지 하단의 『http://commons.apache.org/collections/』 클릭
+      → http://commons.apache.org/proper/commons-collections/
+   3. 페이지 왼편의 Download 클릭
+      → http://commons.apache.org/proper/commons-collections/download_collections.cgi
+   4. 페이지 중간의 『commons-collections4-4.4-bin.zip』 클릭   
+      → 해당 파일 다운로드
+   
+   ※ 의존관계 필수 라이브러리(commons-lang3-3.10.jar)
+   1. http://json-lib.sourceforge.net/dependencies.html 요청 및 접근
+   2. 페이지 하단의 『http://commons.apache.org/lang/』 클릭
+      → http://commons.apache.org/proper/commons-lang/
+   3. 페이지 왼편의 Download 클릭
+      → http://commons.apache.org/proper/commons-lang/download_lang.cgi
+   4. 페이지 중간의 『commons-lang3-3.10-bin.zip』 클릭
+      → 해당 파일 다운로드
+   
+   ※ 의존관계 필수 라이브러리(ezmorph-1.0.6.jar)
+   1. http://json-lib.sourceforge.net/dependencies.html 요청 및 접근
+   2. 페이지 하단의 『http://ezmorph.sourceforge.net』 클릭
+      → http://ezmorph.sourceforge.net/
+   3. 페이지 왼편의 Download 클릭
+      → https://sourceforge.net/projects/ezmorph/files/
+   4. 페이지 중앙 상단 『Download Latest Version』 클릭   
+      → 해당 파일 다운로드   
+   
